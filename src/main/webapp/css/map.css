@@ -1,0 +1,16 @@
+#map area[title]::after {
+    content: attr(title);
+    position: absolute;
+    width: 36px;
+    height: 42px;
+    text-align: center;
+    line-height: 35px;
+    color: #FFF;
+    font-size: 1.2em;
+}
+#map area[title]:hover::after {
+    color : #2f7ffa;
+}
+#map area[title="0"]:hover::after {
+    color: #FFF;
+}

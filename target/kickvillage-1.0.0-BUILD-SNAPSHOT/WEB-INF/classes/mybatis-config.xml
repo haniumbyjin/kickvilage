@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+	<settings>
+		<setting name="mapUnderscoreToCamelCase" value="true" />
+	</settings>
+	<typeAliases>
+		<typeAlias type="com.eunhasu.kickvillage.model.User" alias="User" />
+		<typeAlias type="com.eunhasu.kickvillage.model.Admin" alias="Admin" />
+		<typeAlias type="com.eunhasu.kickvillage.model.Station" alias="Station" />
+		<typeAlias type="com.eunhasu.kickvillage.model.Reserve" alias="Reserve" />
+		<typeAlias type="com.eunhasu.kickvillage.model.Kickboard" alias="Kickboard" />
+	</typeAliases>
+	<mappers>
+		<mapper resource="query/mypage.xml"></mapper>
+		<mapper resource="query/admin.xml"></mapper>
+		<mapper resource="query/station.xml"></mapper>
+		<mapper resource="query/reserve.xml"></mapper>
+	</mappers>
+</configuration>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Reserve">
+	<update id="using" parameterType="Map">
+		UPDATE
+		kickvillage.kickboard
+		SET kickboard.using = "y"
+		WHERE serialNum=#{serialNum} AND stationNum=#{rentalStationNum}
+	</update>
+	<select id="reservableCheck" parameterType="Int"
+		resultType="Int">
+		SELECT COUNT(*)
+		FROM kickvillage.reserve
+		WHERE serialNum=#{serialNum} AND availability = "y"
+	</select>
+
+	<select id="myList" parameterType="String" resultType="Object">
+		SELECT *
+		FROM kickvillage.reserve
+		WHERE userId=#{userId}
+	</select>
+
+	<select id="allList" parameterType="Int" resultType="Reserve">
+		SELECT *
+		FROM kickvillage.reserve
+		WHERE serialNum=#{serialnum} AND availability = "y"
+	</select>
+
+	<update id="cancel" parameterType="Reserve">
+		UPDATE
+		kickvillage.reserve
+		SET availability = "n"
+		WHERE reserveNum=#{reserveNum} AND userId=#{userId}
+		AND reserveDate IS NOT null
+	</update>
+
+	<select id="myReserveCk" parameterType="Reserve"
+		resultType="Int">
+		SELECT COUNT(*)
+		FROM kickvillage.reserve
+		WHERE serialNum=#{serialNum} AND availability = "n"
+	</select>
+
+	<insert id="rental" parameterType="Map">
+		INSERT INTO
+		kickvillage.reserve (userId, serialNum,rentalStationNum, rentalDate,
+		rentalFee, availability)
+		VALUES ( #{userId}, #{serialNum} , #{rentalStationNum}, #{rentalDate},
+		#{rentalFee}, "n")
+	</insert>
+
+	<update id="upRental" parameterType="Reserve">
+		UPDATE
+		kickvillage.reserve
+		SET rentalDate=#{rentalDate}
+		WHERE serialNum=#{serialNum} AND
+		userId=#{userId}
+	</update>
+</mapper> 

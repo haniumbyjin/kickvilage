@@ -1,0 +1,281 @@
+body {
+    overflow-y: scroll !important;
+}
+#contentJoin{
+    width:1200px;
+    height: 700px;
+    margin: 0 auto;
+    position: relative;
+}
+#contentJoinSelect {
+    width:900px;
+    height: 60px;
+    margin: 0 auto;
+    margin-top: 80px;
+    background: linear-gradient( to right, #10a3e6, #6844ff );
+    box-shadow: 5px 1px 10px rgba(005, 005, 5, 0.3);
+}
+#reservationCancel a div{
+    width:60px;
+    height: 23px;
+    padding-top: 7px;
+    border-radius: 15px;
+    margin: 0 auto;
+    color: white;
+    background: #10a3e6;
+}
+#reservationCancel a div:hover{
+    background-color:  #6844ff;
+    transition: 0.2s;
+}
+.JoinSelect {
+    float: left;
+    width: 50%;
+    height: 40px;
+    padding: 20px 0 0 0;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    font-size: 14pt;
+    font-family: "NanumSquare";
+}
+.tableContent {
+    margin: 0 auto;
+    margin-top: 30px;
+      border-spacing: 0px 13px;
+    table-layout: fixed;
+    width: 900px;
+    text-align: center;
+}
+.tableContent th,td {
+    border-bottom: 1px solid #c3c3c3;
+    padding-bottom: 13px;
+    cursor: pointer;
+}
+.tableContent th{
+    font-family: "NanumBarunGothic";
+    font-weight: normal;
+    font-weight: 500;
+    
+}
+.tableContent th:nth-child(1) {
+    width:20%;
+    
+}
+#bottomSubmit button{
+    background-color: #10a3e6;
+    font-family: 'NotoSansCJKkr-Regular';
+    color: white;
+    width: 300px;
+    height: 40px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    
+}
+#bottomSubmit button:hover {
+    background-color: #6844ff;
+    transition: 0.2s;
+}
+#bottomPageControl {
+    margin: 0 auto;
+    width: 800px;
+    font-size: 11pt;
+    position: relative;
+    height: 60px;
+}
+#bottomPageControl img {
+    border: 1px solid #969999;
+}
+#pageLayer span div {
+    width: 25px;
+    height: 21px;
+    padding-top: 2px;
+    text-align: center;
+    position: relative;
+    bottom: 5px;
+    display: inline-block;
+    border:1px solid #eee;
+    color: #696969;
+}
+#pageLayer span div:hover {
+    border:1px solid #6844ff;
+    transition: 0.2s;
+    color: #6844ff;
+    font-weight: bold;
+}
+.complaintTable {
+    margin: 0 auto;
+    margin-top:30px;
+      border-spacing: 0px 13px;
+    table-layout: fixed;
+    width: 900px;
+    text-align: center;
+}
+.complaintTable th,td {
+    border-bottom: 1px solid #c3c3c3;
+    padding-bottom: 13px;
+    cursor: pointer;
+}
+.complaintTable th{
+    font-family: "NanumBarunGothic";
+    font-weight: normal;
+    font-weight: 500;
+    
+}
+.complaintTable th:nth-child(1) {
+    width:10%;
+    
+}
+.complaintTable th:nth-child(3) {
+    width:10%;
+    
+}
+.complaintTable th:nth-child(4) {
+    width:10%;
+    
+}
+#nextBottomPageControl {
+    margin: 0 auto;
+    width: 900px;
+    font-size: 11pt;
+    position: relative;
+    height: 60px;
+}
+#nextBottomPageControl img {
+    border: 1px solid #969999;
+}
+#pageLayer {
+        position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin-top: 20px;    margin-top: 20px;
+}
+#nextPageLayer {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+    margin-top: 20px; 
+}
+#nextPageLayer span div {
+    width: 25px;
+    height: 21px;
+    padding-top: 2px;
+    text-align: center;
+    position: relative;
+    bottom: 5px;
+    display: inline-block;
+    border:1px solid #eee;
+    color: #696969;
+}
+#nextPageLayer span div:hover {
+    border:1px solid #6844ff;
+    transition: 0.2s;
+    color: #6844ff;
+    font-weight: bold;
+}
+#customerCenterSearch {
+    width:320px;
+    height: 40px;
+    background-color: black;
+    position: absolute;
+    left: 50%; top:70px;
+    transform: translate(-50%, 0);
+    overflow: hidden;
+    border: 1px solid #c3c3c3;
+    position: relative;
+    outline: none;
+    transition: 0.2s;
+}
+#customerCenterSearch select{
+    padding-left: 10px;
+    background: white;
+    height: 40px;
+    border: 0px;
+    
+}
+#customerCenterSearch input {
+    height: 40px;
+    margin: 0px;
+    padding: 0px;
+    width:190px;
+    border: 0px;
+        position: relative;
+    right: 5px;
+    bottom: 2px;
+    border-left: 1px solid #c3c3c3;
+    padding-left: 10px;
+    font-size: 12pt;
+    font-family: "NanumBarunGothic"; 
+}
+#customerCenterSearch button {
+    width: 47px;
+    height: 40px;
+    right:0px;
+    border: none;
+    position: absolute;
+    border-left: 1px solid #c3c3c3;
+    background-color: white;
+    background-image: url(/img/search_buttem.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}
+select, input, button {
+    outline: none;
+}
+.questionAnswer {
+    height: 50px;
+    width:900px;
+        border-bottom: 1px solid rgba(153,153,153,0.3);
+    display: grid;
+  grid-template-columns: 800px auto;
+      vertical-align: middle;
+    line-height: 50px;
+    font-family:  "NanumBarunGothic";
+    overflow: hidden;
+}
+.questionAnswer {
+    cursor: pointer;
+}
+.questionAnswer:hover .question {
+    text-decoration-line: underline;
+}
+.question {
+    text-align: center;
+    height: 50px;
+}
+.questionimg {
+    background-image: url(../img/qAopen.png);
+    height: 50px;
+    background-position: center center;
+    background-size: auto 30px;
+    background-repeat: no-repeat;
+}
+.questionTitle {
+        text-align: center;
+        height: 50px;
+        font-weight: bold;
+}
+.answer {
+    height: 300px;
+    width: 900px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.questionAnswer:hover > .answer {
+    text-decoration-line: none;
+}
+.questionAnswerclose {
+    height: 50px;
+    width:900px;
+        border-bottom: 1px solid rgba(153,153,153,0.3);
+    display: grid;
+  grid-template-columns: 800px auto;
+      vertical-align: middle;
+    line-height: 50px;
+    font-family:  "NanumBarunGothic";
+    cursor: pointer;
+}
+.open {background-image: url(../img/qAopen.png);}
+.close { background-image: url(../img/qAClose.png);}

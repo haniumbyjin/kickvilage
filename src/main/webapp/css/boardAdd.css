@@ -1,0 +1,58 @@
+#form {
+	width:1200px;
+	margin: 0 auto;
+	padding-top: 100px; 
+}
+#boardTitle {
+	padding: 5px 20px;
+	width:500px;
+	margin-bottom: 50px;
+	margin-left: 20px;
+}
+#cke_1_contents {
+	height: 400px !important;
+}
+#submitPosition {
+	width:1200px;
+	margin: 0 auto;
+	position: relative;
+}
+#submitPosition button {
+	width:400px;
+	margin:30px;
+	height: 40px;
+	color: #fff;
+	background: #10a3e6;
+	border: 0px;
+	position: absolute;
+	left:50%;
+	transform: translate(-50%, 0);
+}
+#submitPosition button:hover {
+	background: #6844ff;
+	transition: 0.4s;
+}
+@media all and (max-width:1024px) {
+	#form {
+		width:90%;
+		margin: 0 5%;
+	}
+	form div:nth-child(1) {
+		width:100%;
+	}
+	#boardTitle {
+		width:70%
+	}
+	#cke_editor1 {
+		width:100%;
+	}
+	#submitPosition {
+		width:100%;
+	}
+	#submitPosition button {
+		width:90%;
+		margin: 0px;
+		margin-top:20px;
+		padding: 0 5%;
+	}
+}

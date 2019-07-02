@@ -1,0 +1,104 @@
+    body {
+        background-color: #f2faff;
+    }
+        html,body {
+    margin: 0px;
+    height:100%;
+    width: 100%;
+    display: block;
+    overflow-x: hidden;
+}
+body {
+	overflow-y: scroll !important;
+}
+    #signUpLogo {
+        margin: 0 auto;
+        width: 440px;
+        height: 193px;
+    }    
+    .signDiv {
+        width:440px;
+        min-height: 30px;
+        margin: 0 auto;
+    }
+.signUp_P {
+    font-family: "NanumGothic";
+}
+.signInput {
+    height: 40px;
+}
+.signInput input {
+    height: 40px;
+    width:420px;
+    background: white;
+    border:1px solid #c2c2c2;
+    padding-left: 20px;
+    font-size:12pt;
+    font-family: "NanumGothic";
+    transition: 0.3s;
+}
+input:focus {
+    outline: none;
+}
+.signInput input:hover {
+    border:1px solid #0fa3e7;
+    transition: 0.3s;
+}
+.signInput input:focus {
+    border:1px solid #6349ff;
+    transition: 0.3s;
+}
+button {
+    width: 500px;
+    height: 50px;
+    background-color: #2f7ffa;
+    color: white;
+    font-size: 14pt;
+    margin: 0 auto;
+    text-align: center;
+    cursor:pointer;
+    border: 0px;
+    outline: none; 
+    }
+button:hover {
+    background-color: #2f7ffc;
+    transition: 0.2s;
+	outline: none;
+}   
+@media all and (max-width:1024px) {
+	#header_ping {
+    	position: fixed;
+    	top:0px;
+}
+	body {
+		overflow-y: scroll !important;
+	}
+	#signUpLogo {
+		width:100%;
+		background-image: url("/img/logoSignUp.png");
+		background-repeat: no-repeat;
+		background-position: center; 
+		    margin-top: 60px;
+	}
+	#signUpLogo img {
+		display: none;
+	}
+	form {
+		padding: 0 5%;
+		width: 90%;
+	}
+	.signUp_P, .signDiv, .signInput, .signInput input {
+		width: 90%;
+	}
+	.signInput input {
+		    height: 30px;
+		    width:95%; 
+	}
+	button {
+		width: 100% !important;
+		height: 50px;
+		font-size: 12pt;
+		padding: 0px;
+	}
+	
+}

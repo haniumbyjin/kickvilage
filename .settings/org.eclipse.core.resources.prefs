@@ -1,0 +1,12 @@
+=\=\=\=\=\=\=
+<<<<<<<=HEAD
+>>>>>>>=8b3f2cef5832b771431be2ee7b09df5838888c73
+eclipse.preferences.version=1
+<<<<<<< HEAD
+=======
+<<<<<<< HEAD
+encoding//src/main/webapp/WEB-INF/views/headerFooter/header.jsp=UTF-8
+=======
+encoding//src/main/webapp/WEB-INF/views/board/list.jsp=UTF-8
+>>>>>>> 8b3f2cef5832b771431be2ee7b09df5838888c73
+>>>>>>> 66865217808ab8ae1f9d850e770aa90b7ef696b6

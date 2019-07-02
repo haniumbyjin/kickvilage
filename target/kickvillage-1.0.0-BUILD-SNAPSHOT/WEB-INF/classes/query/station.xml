@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+ <mapper namespace="Station">
+ 
+	<insert id="addStation" parameterType="Station">
+		INSERT INTO station (stationName, locationX, locationY, open) VALUES (#{stationName}, #{locationX}, #{locationY}, #{open})
+	</insert>
+	<select id="getStationList" resultType="Station">
+		SELECT s.*, (SELECT COUNT(serialNum) FROM kickboard k WHERE k.stationNum = s.stationNum) FROM station s
+	</select>
+	<update id="patchStation" parameterType="Station">
+		UPDATE station SET stationName=#{stationName}, open=#{open}, locationX=#{locationX}, locationY=#{locationY} WHERE stationNum=#{stationNum}
+	</update>
+	<delete id="deleteStation" parameterType="Int">
+		DELETE FROM station WHERE stationNum=#{stationNum}
+	</delete>
+	<select id="getKickboardList" parameterType="Int" resultType="Kickboard">
+		SELECT * FROM kickboard WHERE stationNum=#{stationNum}
+	</select>
+ </mapper> 

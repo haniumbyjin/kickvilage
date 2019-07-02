@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Board">
+
+	<insert id="add" parameterType="Board">
+		INSERT INTO
+		kickvillage.board(boardTitle,boardText,boardDate,userId)
+		VALUES(#{boardTitle},#{boardText},#{boardDate},#{userId})
+	</insert>
+
+	<select id="list" parameterType="PageMaker" resultType="Board">
+	<![CDATA[
+		select *
+		from kickvillage.board
+		where boardNum > 0
+		order by boardDate desc
+		limit #{pageNum}, #{contentNum}
+	]]>
+	</select>
+
+	<select id="totalCount" resultType="Int">
+		SELECT COUNT(*)
+		FROM
+		kickvillage.board
+	</select>
+
+	<update id="update" parameterType="Board">
+		UPDATE kickvillage.board
+		SET
+		boardTitle=#{boardTitle},boardText=#{boardText},boardDate=#{boardDate}
+		WHERE boardNum=#{boardNum} AND userId=#{userId}
+	</update>
+
+	<delete id="delete" parameterType="Board">
+		DELETE FROM kickvillage.board
+		WHERE boardNum=#{boardNum} AND userId=#{userId}
+	</delete>
+
+	<insert id="answerAdd" parameterType="Answer">
+		INSERT INTO
+		kickvillage.answer(adminId,answerText,answerDate,boardNum) VALUES
+		(#{adminId},#{answerText},#{answerDate},#{boardNum})
+	</insert>
+
+	<resultMap type="Board" id="detail">
+		<id property="boardNum" column="boardNum" />
+		<result property="boardTitle" column="boardTitle" />
+		<result property="boardText" column="boardText" />
+		<result property="boardDate" column="boardDate" />
+		<result property="userId" column="userId" />
+		<collection property="answerList" javaType="ArrayList"
+			ofType="Answer" select="answerList" column="BoardNum">
+		</collection>
+	</resultMap>
+
+	<select id="answerList" resultType="Answer">
+		SELECT
+		answer.answerNum,
+		answer.answerText,
+		answer.answerDate,
+		answer.adminId
+		FROM
+		kickvillage.answer
+		WHERE
+		answer.boardNum =#{boardNum}
+	</select>
+
+	<select id="detail" parameterType="Board" resultMap="detail">
+		SELECT
+		board.boardNum, board.boardTitle,
+		board.boardText,board.boardDate,
+		board.userId
+		FROM
+		kickvillage.board
+		WHERE
+		board.boardNum =#{boardNum}
+	</select>
+
+	<update id="answerUpdate" parameterType="Answer">
+		UPDATE
+		kickvillage.answer
+		SET 
+		answerText=#{answerText},answerDate=#{answerDate}
+		WHERE 
+		answerNum = #{answerNum} AND boardNum =#{boardNum} 
+	</update>
+	
+	<delete id="answerDelete" parameterType="Answer">
+		DELETE FROM kickvillage.answer
+		WHERE answer.answerNum=#{answerNum}  AND answer.adminId=#{adminId} AND answer.boardNum=#{boardNum}
+	</delete>
+</mapper>
+ 

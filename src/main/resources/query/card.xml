@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="Card">
+	<insert id="cardAdd" parameterType="Card">
+		INSERT INTO
+		kickvillage.card(userId,cardNumFirst,cardNumSecond,cardNumThird,cardNumFourth,validityMonth,
+		validityYear, cardPw,bank)
+		VALUES(#{userId},#{cardNumFirst},#{cardNumSecond},#{cardNumThird},#{cardNumFourth},#{validityMonth},#{validityYear},#{cardPw},#{bank})
+	</insert>
+	<select id="cardList" parameterType="Card" resultType="Card">
+		SELECT
+		card.cardNum,cardNumFirst,
+		cardNumSecond, cardNumThird,
+		validityMonth,
+		validityYear, bank
+		FROM
+		kickvillage.card
+		WHERE
+		userId = #{userId}
+	</select>
+	<update id="cardUpdate" parameterType="Card">
+		UPDATE
+		kickvillage.card
+		SET
+		cardNumFirst=#{cardNumFirst},cardNumSecond=#{cardNumSecond},
+		cardNumThird=#{cardNumThird},cardNumFourth=#{cardNumFourth},
+		validityMonth=#{validityMonth}, validityYear=#{validityYear},
+		cardPw=#{cardPw},bank="#{bank}"
+		WHERE
+		userId = #{userId} AND
+		cardNum=#{cardNum}
+	</update>
+	<delete id="cardDelete" parameterType="Map">
+		DELETE
+		FROM
+		kickvillage.card
+		WHERE
+		card.cardNum=#{cardNum} AND card.userId=#{userId}
+	</delete>
+</mapper>
